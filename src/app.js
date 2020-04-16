@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = require('cors');
 const { uuid } = require('uuidv4');
+const cors = require('cors');
 
 const app = express();
 
@@ -83,7 +83,7 @@ app.post('/repositories/:id/like', (request, response) => {
 
   repositories[repositoryIndex].likes = repositories[repositoryIndex].likes + 1;
 
-  return response.status(204).send();
+  return response.json(repositories[repositoryIndex]);
 });
 
 module.exports = app;
